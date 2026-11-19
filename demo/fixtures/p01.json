@@ -1,0 +1,42 @@
+{
+  "caseId": "P01",
+  "claimId": "phantom-meet-domain-association",
+  "claim": "Sekoia associated meet[.]google[.]us-join[.]com with its investigated fake Google Meet malware cluster.",
+  "review": { "reviewer": "author", "date": "2026-11-13", "decision": "accept_shared_origin", "secondReview": "pending" },
+  "sources": [
+    {
+      "id": "p01-sekoia-claim",
+      "publisher": "Sekoia",
+      "url": "https://www.sekoia.com/blog/clickfix-tactic-the-phantom-meet",
+      "publicationDate": "2024-10-17",
+      "locator": "Fake Google Meet pages and technical issues: domain list",
+      "evidenceSummary": "The investigation identifies the selected domain as part of the cluster."
+    },
+    {
+      "id": "p01-thn-claim",
+      "publisher": "The Hacker News",
+      "url": "https://thehackernews.com/2024/10/beware-fake-google-meet-pages-deliver.html",
+      "publicationDate": "2024-10-18",
+      "locator": "Opening attribution to Sekoia and following domain list",
+      "evidenceSummary": "The article explicitly attributes coverage to Sekoia and repeats the selected domain."
+    }
+  ],
+  "disclosure": {
+    "merge": ["p01-sekoia-claim", "p01-thn-claim"],
+    "scope": "These claim-bearing evidence items share Sekoia's investigation; not a publisher-wide merge.",
+    "timing": "Experimentally disclosed after issuance and before execution; not an observed historical timeline."
+  },
+  "threshold": 2,
+  "action": {
+    "type": "request_block_in_simulated_outbox",
+    "claimId": "phantom-meet-domain-association",
+    "testAddress": "192.0.2.10",
+    "historicalIndicator": "meet[.]google[.]us-join[.]com"
+  },
+  "limitations": [
+    "A curated metadata fixture with paraphrases, not frozen full reports or automated extraction.",
+    "The initial separate partition and threshold are experimental assumptions, not established independence or an operational policy.",
+    "The action writes only to an in-memory outbox; no firewall, network connection, LLM, or distributed race test.",
+    "The historical indicator is not asserted to be currently malicious."
+  ]
+}

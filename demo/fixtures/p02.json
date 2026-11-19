@@ -1,0 +1,46 @@
+{
+  "caseId": "P02",
+  "claimId": "wolfsbane-hider-hooks",
+  "claim": "ESET reports that the analyzed WolfsBane Hider hooks C library functions including open, stat, readdir, and access.",
+  "review": {
+    "reviewer": "Codex (AI-assisted review)",
+    "date": "2026-11-13",
+    "decision": "accept_shared_origin",
+    "secondReview": "pending",
+    "humanReview": "pending"
+  },
+  "sources": [
+    {
+      "id": "p02-eset-claim",
+      "publisher": "ESET",
+      "url": "https://www.welivesecurity.com/en/eset-research/unveiling-wolfsbane-gelsemiums-linux-counterpart-to-gelsevirine/",
+      "locator": "WolfsBane Hider rootkit",
+      "evidenceSummary": "The analysis lists the four selected C library hooks."
+    },
+    {
+      "id": "p02-bleeping-claim",
+      "publisher": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/chinese-gelsemium-hackers-use-new-wolfsbane-linux-malware/",
+      "locator": "WolfsBane\u2019s stealthy howl",
+      "evidenceSummary": "The selected function list is quoted from and linked to ESET."
+    }
+  ],
+  "disclosure": {
+    "merge": [
+      "p02-eset-claim",
+      "p02-bleeping-claim"
+    ],
+    "scope": "Claim-specific shared investigation, not a publisher-wide merge.",
+    "timing": "Experimentally disclosed after issuance, not an observed historical timeline."
+  },
+  "threshold": 2,
+  "action": {
+    "type": "admit_claim_in_simulated_outbox",
+    "claimId": "wolfsbane-hider-hooks"
+  },
+  "limitations": [
+    "Curated paraphrases from the existing review packet, not frozen full reports or automated extraction.",
+    "Initial separate partition and threshold are experimental; effects are simulated.",
+    "AI-assisted annotation, not independent human adjudication."
+  ]
+}

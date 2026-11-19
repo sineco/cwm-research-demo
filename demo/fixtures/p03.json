@@ -1,0 +1,47 @@
+{
+  "caseId": "P03",
+  "claimId": "bootkitty-limited-ubuntu",
+  "claim": "ESET reports that the analyzed Bootkitty sample targets Linux with limited Ubuntu compatibility.",
+  "review": {
+    "reviewer": "Codex (AI-assisted review)",
+    "date": "2026-11-13",
+    "decision": "accept_shared_origin",
+    "secondReview": "pending",
+    "humanReview": "pending"
+  },
+  "sources": [
+    {
+      "id": "p03-eset-claim",
+      "publisher": "ESET announcement",
+      "url": "https://www.eset.com/uk/about/newsroom/press-releases/eset-research-discovers-the-first-uefi-bootkit-for-linux-uk/",
+      "locator": "Limited Ubuntu compatibility paragraph",
+      "evidenceSummary": "The first-party announcement describes compatibility with only a few Ubuntu versions."
+    },
+    {
+      "id": "p03-ars-claim",
+      "publisher": "Ars Technica",
+      "url": "https://arstechnica.com/security/2024/11/found-in-the-wild-the-worlds-first-unkillable-uefi-bootkit-for-linux/",
+      "locator": "Corrected coverage attributing the findings to ESET",
+      "evidenceSummary": "The corrected article attributes the investigation and limited compatibility to ESET."
+    }
+  ],
+  "disclosure": {
+    "merge": [
+      "p03-eset-claim",
+      "p03-ars-claim"
+    ],
+    "scope": "Claim-specific shared investigation, not a publisher-wide merge.",
+    "timing": "Experimentally disclosed after issuance, not an observed historical timeline."
+  },
+  "threshold": 2,
+  "action": {
+    "type": "admit_claim_in_simulated_outbox",
+    "claimId": "bootkitty-limited-ubuntu"
+  },
+  "limitations": [
+    "Underlying technical report was unavailable during review; use the accessible ESET announcement and corrected Ars coverage. No assertion of observed in-the-wild infection.",
+    "Curated paraphrases from the existing review packet, not frozen full reports or automated extraction.",
+    "Initial separate partition and threshold are experimental; effects are simulated.",
+    "AI-assisted annotation, not independent human adjudication."
+  ]
+}

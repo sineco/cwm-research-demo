@@ -1,0 +1,47 @@
+{
+  "caseId": "P04",
+  "claimId": "beavertail-reported-wallet-count",
+  "claim": "Unit 42 reports that the analyzed Qt BeaverTail variant targets 13 wallet browser extensions, compared with nine in the earlier JavaScript variant.",
+  "review": {
+    "reviewer": "Codex (AI-assisted review)",
+    "date": "2026-11-13",
+    "decision": "accept_shared_origin",
+    "secondReview": "pending",
+    "humanReview": "pending"
+  },
+  "sources": [
+    {
+      "id": "p04-unit42-claim",
+      "publisher": "Unit 42",
+      "url": "https://unit42.paloaltonetworks.com/north-korean-threat-actors-lure-tech-job-seekers-as-fake-recruiters/",
+      "locator": "Prose immediately before Table 1",
+      "evidenceSummary": "Unit 42 reports the 13-versus-nine extension count."
+    },
+    {
+      "id": "p04-record-claim",
+      "publisher": "The Record",
+      "url": "https://therecord.media/updated-malware-strains-north-korea",
+      "locator": "Wallet extension count and attribution to Unit 42",
+      "evidenceSummary": "The article quotes the numerical finding and links Unit 42."
+    }
+  ],
+  "disclosure": {
+    "merge": [
+      "p04-unit42-claim",
+      "p04-record-claim"
+    ],
+    "scope": "Claim-specific shared investigation, not a publisher-wide merge.",
+    "timing": "Experimentally disclosed after issuance, not an observed historical timeline."
+  },
+  "threshold": 2,
+  "action": {
+    "type": "admit_claim_in_simulated_outbox",
+    "claimId": "beavertail-reported-wallet-count"
+  },
+  "limitations": [
+    "The extracted Unit 42 table lists 12 extension IDs despite prose saying 13. This fixture represents attribution of a reported count, not verified malware capability.",
+    "Curated paraphrases from the existing review packet, not frozen full reports or automated extraction.",
+    "Initial separate partition and threshold are experimental; effects are simulated.",
+    "AI-assisted annotation, not independent human adjudication."
+  ]
+}

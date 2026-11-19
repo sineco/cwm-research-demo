@@ -102,6 +102,6 @@ lines.push('', '## Interpretation', '',
   'In the many_sources workloads, each decision has 32 source IDs but only four initial origin groups. This deliberately tests where a compact witness could help. In the other workloads, there are only three or four source IDs per decision, so recounting may be cheaper. All-affected workloads deliberately remove the selectivity advantage.', '',
   'Source lookups count input IDs passed to roots(); witness checks count root/epoch checks, including repeated checks during renewal. Neither counts internal union-find pointer hops. Both are reported so reduced source lookups cannot be mistaken for reduced total work.', '',
   'Global versioning retains the common signed-token payload for a controlled comparison. A specialized global-token format could be smaller/faster. The recount baseline does not sign a replacement after a merge: it authorizes directly from current support within the atomic local operation. CWM/global follow the demo’s extra verification and recount passes; these costs are included.', '',
-  'See the repository README for assumptions and usage. Recorded paper results are not bundled with this code-only release.');
+  `See the repository README for assumptions and interpretation boundaries.`);
 writeFileSync(new URL('SUMMARY.md', output), lines.join('\n')+'\n');
 console.log(`Saved results to ${fileURLToPath(output)}`);

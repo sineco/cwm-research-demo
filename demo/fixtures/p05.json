@@ -1,0 +1,47 @@
+{
+  "caseId": "P05",
+  "claimId": "ta427-clickfix-thinktanks",
+  "claim": "Proofpoint reports TA427 ClickFix targeting individuals in fewer than five think-tank organizations in January and February 2025.",
+  "review": {
+    "reviewer": "Codex (AI-assisted review)",
+    "date": "2026-11-13",
+    "decision": "accept_shared_origin",
+    "secondReview": "pending",
+    "humanReview": "pending"
+  },
+  "sources": [
+    {
+      "id": "p05-proofpoint-claim",
+      "publisher": "Proofpoint",
+      "url": "https://www.proofpoint.com/us/blog/threat-insight/around-world-90-days-state-sponsored-actors-try-clickfix",
+      "locator": "North Korea: TA427",
+      "evidenceSummary": "The selected paragraph gives the dates, sector and organization count."
+    },
+    {
+      "id": "p05-thn-claim",
+      "publisher": "The Hacker News",
+      "url": "https://thehackernews.com/2025/04/state-sponsored-hackers-weaponize.html",
+      "locator": "Attribution to Proofpoint for January-February ClickFix activity",
+      "evidenceSummary": "The dates, think-tank sector and count are attributed to Proofpoint."
+    }
+  ],
+  "disclosure": {
+    "merge": [
+      "p05-proofpoint-claim",
+      "p05-thn-claim"
+    ],
+    "scope": "Claim-specific shared investigation, not a publisher-wide merge.",
+    "timing": "Experimentally disclosed after issuance, not an observed historical timeline."
+  },
+  "threshold": 2,
+  "action": {
+    "type": "admit_claim_in_simulated_outbox",
+    "claimId": "ta427-clickfix-thinktanks"
+  },
+  "limitations": [
+    "Proofpoint describes TA427 as overlapping Kimsuky activity; this is not a universal identity claim.",
+    "Curated paraphrases from the existing review packet, not frozen full reports or automated extraction.",
+    "Initial separate partition and threshold are experimental; effects are simulated.",
+    "AI-assisted annotation, not independent human adjudication."
+  ]
+}

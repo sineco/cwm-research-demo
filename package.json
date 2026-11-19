@@ -9,11 +9,22 @@
   },
   "scripts": {
     "demo": "node demo/run.mjs",
-    "test": "node --test demo/cwm.test.mjs benchmark/*.test.mjs",
+    "test": "node --test demo/*.test.mjs benchmark/*.test.mjs",
+    "demo:p01": "node demo/public-report-run.mjs",
+    "demo:agent:smoke": "node demo/agent-run.mjs --smoke",
+    "demo:agent": "node --env-file=.env.agent demo/agent-run.mjs",
+    "experiment:boundary": "node benchmark/execution-boundary-run.mjs",
+    "benchmark:token-cost": "node benchmark/token-cost-run.mjs",
     "benchmark:spectrum": "node benchmark/spectrum-run.mjs",
     "benchmark:spectrum:quick": "node benchmark/spectrum-run.mjs --quick",
     "benchmark": "node benchmark/run.mjs",
     "benchmark:quick": "node benchmark/run.mjs --quick",
-    "benchmark:scaling": "node benchmark/scaling-run.mjs"
+    "benchmark:scaling": "node benchmark/scaling-run.mjs",
+    "experiment:five-cases:smoke": "node demo/report-suite-run.mjs --smoke",
+    "experiment:five-cases": "node --env-file=.env.agent demo/report-suite-run.mjs --live",
+    "benchmark:tradeoff": "node benchmark/tradeoff-run.mjs",
+    "benchmark:tradeoff:smoke": "node benchmark/tradeoff-run.mjs --smoke",
+    "experiment:concurrent-service": "node benchmark/concurrent-service-run.mjs",
+    "demo:downstream": "node demo/downstream-witness-run.mjs"
   }
 }

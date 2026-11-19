@@ -3,3 +3,7 @@ results/
 demo/output/
 *.log
 .DS_Store
+
+.env.agent
+.env.agent.*
+!.env.agent.example

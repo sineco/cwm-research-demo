@@ -84,6 +84,10 @@ export class CWM {
     return token;
   }
 
+  hasSupport(decision) {
+    return this.roots(decision.sourceIds).length >= decision.threshold;
+  }
+
   inspect(token, requestedAction) {
     try {
       this.metrics.verifications++;
@@ -102,7 +106,7 @@ export class CWM {
         JSON.stringify(payload.action) !== JSON.stringify(decision.action) ||
         payload.threshold !== decision.threshold) return { status: 'binding_mismatch' };
     if (this.strategy === 'recount') {
-      return { status: this.roots(decision.sourceIds).length >= decision.threshold ? 'current' : 'insufficient_support' };
+      return { status: this.hasSupport(decision) ? 'current' : 'insufficient_support' };
     }
     if (this.strategy === 'global') {
       return payload.issuedAtIndex === this.index ? { status: 'current' } :
